@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Search Screen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<style>
+    
+
+    *{
+      padding: 0%;
+      margin:0%;
+      box-sizing: border-box;
+    }
+    body {
+            /* width: 100%;
+            height: 100%; */
+            background-image: url("https://htmlcolorcodes.com/assets/images/colors/blue-gray-color-solid-background-1920x1080.png");
+            background-position: center;
+            background-size: cover;
+        }
+    td, thead{
+        text-align: center;
+        border: solid 1px black;
+		padding: 7px;
+        
+    }
+    tbody tr :hover{
+        opacity: 0.6;
+        font-weight: bold;
+    }
+    button, input, table {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+    button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    button{
+        border: 10px;
+        border-color: darkgray;
+    }
+    
+</style> 
+<script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+    function myFunction2() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput2");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+    function myFunction3() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput3");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[2];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+
+
+
+    //Voice Search
+
+    function record() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+
+            recognition.onresult = function(event) {
+                // console.log(event);
+              var voiceInpComp = document.getElementById('myInput').value = event.results[0][0].transcript;
+              console.log(voiceInpComp)
+
+
+
+
+              filter = voiceInpComp.toUpperCase();
+              // console.log(filter)
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+
+              // Loop through all table rows, and hide those who don't match the search query
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }
+              }
+              
+
+
+
+
+            }
+            recognition.start();
+
+         
+
+     
+
+
+
+
+
+
+
+        }
+        function record2() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+
+            recognition.onresult = function(event) {
+                // console.log(event);
+                var voiceInpparts=document.getElementById('myInput2').value = event.results[0][0].transcript;
+
+
+
+
+                filter =voiceInpparts.toUpperCase();
+              // console.log(filter)
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+
+              // Loop through all table rows, and hide those who don't match the search query
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }
+              }
+
+
+
+
+            }
+            recognition.start();
+
+        }
+
+
+
+
+
+
+
+
+
+        function record3() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+
+            recognition.onresult = function(event) {
+                // console.log(event);
+                var voiceInpmodel=document.getElementById('myInput3').value = event.results[0][0].transcript;
+
+
+                filter =voiceInpmodel.toUpperCase();
+              // console.log(filter)
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+
+              // Loop through all table rows, and hide those who don't match the search query
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }
+              }
+
+
+
+
+
+            }
+            recognition.start();
+
+        }
+    </script>
+</head>
+
+<body>
+  
+    <div class="container">
+      <div class="container-fluid text-center" style="background-color: #14223b;height:70px">
+        <div class="container-fluid text-center pt-3 d-flex" style="background-color: #14223b;height:70px">
+      
+          <button class=" btn btn-primary" style="height: fit-content;" onclick="window.location='../../startbootstrap-sb-admin-gh-pages/dashboard.html';" ><a style="text-decoration: none;" class="text-white" href="#">Back</a></button>
+    
+        <h1 style="color: white;" class="mx-auto">Search Screen</h1>
+        
+            </div>
+            <hr style="background-color:#14223b; height:3px;margin: 1%;"/>
+
+    <hr>
+ <div class="row">
+  <div class="col-12 mb-4 text-center" > 
+    <div class="input-group md-form form-sm form-1 text-center  justify-content-center justify-content-between mx-1">   
+        <input type="text" autocomplete="on" id="myInput" onkeyup="myFunction()" style="border-color: #14223B; border-width: 2px;" class="form-control mx-auto" type="text" placeholder="Enter company name..." aria-label="Search" autocomplete="td[0]">
+        <button onclick="record()" type="button" class="btn btn-primary mx-1" style="background-color:#14223B ;">Speak</button>
+   
+    </div>
+  </div> 
+ </div>
+
+    <div class="row">  
+      <div class="col-6 mb-4" > 
+        <div class="input-group md-form form-sm form-1 ">   
+            <input type="text" id="myInput2" onkeyup="myFunction2()" style="border-color: #14223B; border-width: 2px;" class="form-control mx-1" type="text" placeholder="Enter part name..." aria-label="Search">
+            <button onclick="record2()" type="button" class="btn btn-primary mx-1" style=" background-color:#14223B ;">Speak</button>
+       
+          </div>
+      </div>
+
+      <div class="col-6 mb-4" >
+        <div class="input-group md-form form-sm form-2 ">
+            <input type="text" id="myInput3" onkeyup="myFunction3()" style="border-color: #14223B; border-width: 2px;" class="form-control mx-1" type="search" placeholder="Enter model no..." aria-label="Search">
+            <button onclick="record3()" type="button" class="btn btn-primary mx-1" style=" background-color:#14223B ;" >Speak </button>
+       
+          </div>  
+      </div>
+      <!-- <div class="col-md-1 mb-1" >
+        <div class="input-group md-form form-sm form-2 pl-0">
+            <button type="button" class="btn btn-primary btn-sm" style="width: 100%; height: 35PX; background-color:#14223B ;">Search</button>
+            
+        </div>  
+      </div> -->
+   </div>
+  <hr>
+  <table style="margin-left: 10%; width: 80%; "  class="table table-success table-striped" id="myTable">
+    <thead style="color: #14223B;background-color: white;">
+        <th style="color: #14223B;background-color: white">Company Name</th>
+        <th style="color: #14223B;background-color: white">Part Name</th>
+        <th style="color: #14223B;background-color: white">Model No</th>
+    </thead>
+    
+    <tbody>
+
+    <tr style="background-color: #5293b7;color: #14223b;font-weight: 700;">
+        <td>YAMAHA</td>
+        <td onclick="location.href='Prompt.html';">Breaks</td>
+        <td>YY-191</td>
+    </tr>
+    <tr style="background-color: #5293b7;color: #14223b;font-weight: 700;">
+        <td>SUZUKI</td>
+        <td onclick="location.href='Prompt.html';">Bearings</td>
+        <td>YY-O87</td>
+    </tr>
+    <tr style="background-color: #5293b7;color: #14223b;font-weight: 700;">
+        <td> HONDA</td>
+        <td onclick="location.href='Prompt.html';">Headlights</td>
+        <td>YD-076</td>
+    </tr>
+    <tr style="background-color: #5293b7;color: #14223b;font-weight: 700;">
+        <td>HONDA</td>
+        <td onclick="location.href='Prompt.html';">Headlights</td>
+        <td>YY-055</td>
+    </tr>
+    <tr style="background-color: #5293b7;color: #14223b;font-weight: 700;">
+        <td>YAMAHA</td>
+        <td onclick="location.href='Prompt.html';">Screw</td>
+        <td>CD-70</td>
+    </tr>	
+    <tr style="background-color: #5293b7;color: #14223b;font-weight: 700;">
+        <td>YAMAHA</td>
+        <td onclick="location.href='Prompt.html';">Gears</td>
+        <td>YY-442</td>
+    </tr>	
+    <tr style="background-color: #5293b7;color: #14223b;font-weight: 700;">
+        <td>YAMAHA</td>
+        <td onclick="location.href='Prompt.html';">Silencer</td>
+        <td>YY-441</td>
+    </tr>	
+    <tr style="background-color: #5293b7;color: #14223b;font-weight: 700;">
+        <td>SUZUKI</td>
+        <td onclick="location.href='Prompt.html';">Ball bearings</td>
+        <td>YY-302</td>
+    </tr>	
+    <tr style="background-color: #5293b7;color: #14223b;font-weight: 700;">
+        <td>SUZUKI</td>
+        <td onclick="location.href='Prompt.html';">Gears</td>
+        <td>YY-987</td>
+    </tr>			
+    </tbody>
+</table>
+<div class="row">
+
+
+  <div class="col-6 text-end">
+   
+      <button onclick="location.href='Cart.html';" type="button" class="btn btn-primary mx-1 " style="background-color:#14223B ; ">Add Items</button> 
+</div>
+ 
+ 
+  <div class="col-6 text-start">
+    <button onclick="location.href='../../billing.html';" type="button" class="btn btn-primary mx-1" style="background-color:#14223B ;">Move to Bill</button>
+
+  </div>
+  </div>
+</div>
+
+
+    </div>
+    
+</body>
+</html>
+
+ 
+
+    

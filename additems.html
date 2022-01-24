@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+<!-- bootstrap css -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- style css -->
+<link rel="stylesheet" href="css/style.css">
+<!-- Responsive-->
+<link rel="stylesheet" href="css/responsive.css">
+<!-- fevicon -->
+<link rel="icon" href="images/fevicon.png" type="image/gif" />
+<!-- Scrollbar Custom CSS -->
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body >
+
+
+    
+<div id="whole" style="background-color: #14223b;height: 100vh;">
+    <div class="container-fluid text-center pt-3 d-flex" style="background-color: #14223b;height:70px">
+      
+      <button class=" btn btn-primary"  
+               
+       style="height: fit-content;" onclick="window.location='startbootstrap-sb-admin-gh-pages/dashboard.html';" ><a class="text-white" href="#">Back</a></button>
+<h1 style="color: white;" class="mx-auto">Add Items to Stock</h1>
+
+    </div>
+    <hr style="background-color:#14223b; height:3px;margin: 1%;"/>
+    
+    
+<div class="container-fluid" style=" border-style:solid; border-color: #ffffff;border-width: 6px;background-color: #5293b7;" >
+
+
+    <form class="row g-3" style="background-color:#5293b7;color: #14223b;padding-bottom: 2%;margin-top: 0.1%;">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label" style="font-weight: bolder;font-size: large;">Item Name</label>
+          <input type="text" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label"  style="font-weight: bolder;font-size: large;">Company</label>
+          <input type="text"  class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label" style="font-weight: bolder;font-size: large;">Model</label>
+            <input type="text" class="form-control" id="inputEmail4">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label" style="font-weight: bolder;font-size: large;">Quantity</label>
+            <input type="text"  class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label" style="font-weight: bolder;font-size: large;">Price</label>
+            <input type="text"  class="form-control" id="inputEmail4">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label" style="font-weight: bolder;font-size: large;">Date</label>
+            <input type="date" class="form-control" id="inputPassword4">
+          </div>
+        
+
+      </form>
+    </div>
+    <hr style="background-color:#14223b; height:3px;margin: 1%;"/>
+
+
+
+
+
+
+      <div class="col-12  mt-3 text-center ">
+     
+
+        <button class="trigger-btn btn btn-primary"   data-toggle="modal"  
+
+               
+        id="submit" onclick="addItems()" ><a class="text-white" href="#">Add Items</a></button><br /><br />
+      </div>
+
+    </div>
+
+
+
+
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header justify-content-center">
+				<div class="icon-box">
+					<i class="material-icons">&#xE876;</i>
+				</div>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body text-center">
+				<h4>Great!</h4>	
+				<p>Your item has been added in the product table successfully.</p>
+				
+			</div>
+		</div>
+	</div>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <script>
+
+    
+        function addItems() {
+            $("#myModal").modal('show');
+           
+              }
+
+
+              function deleteDocument(){
+
+              
+            }
+      </script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+
+
+    
+<script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+</body>
+</html>

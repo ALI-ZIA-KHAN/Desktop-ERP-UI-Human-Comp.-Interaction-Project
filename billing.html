@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
+
+  
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-alpha1/html2canvas.js">
+    </script>
+
+</head>
+<body >
+
+
+    
+<div id="whole" style="background-color: #14223b;">
+    <div class="container-fluid text-center" style="background-color: #14223b;height:70px">
+<h1 style="color: white;">Billing Information</h1>
+
+    </div>
+    <hr style="background-color:#14223b; height:3px;margin: 1%;"/>
+    
+    
+<div class="container-fluid" style=" border-style:solid; border-color: #ffffff;border-width: 6px;background-color: #5293b7;" >
+
+
+    <form class="row g-3" style="background-color:#5293b7;color: #14223b;padding-bottom: 2%;margin-top: 0.1%;">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label" style="font-weight: bolder;font-size: large;">Name</label>
+          <input type="name" placeholder="Mr.XYZ" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label"  style="font-weight: bolder;font-size: large;">Invoice No</label>
+          <input type="number" value="2563" class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label" style="font-weight: bolder;font-size: large;">Address</label>
+            <input type="text" class="form-control" id="inputEmail4">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label" style="font-weight: bolder;font-size: large;">Company Name</label>
+            <input type="text" value="Sabri Autos" disabled=true class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label" style="font-weight: bolder;font-size: large;">Contact No</label>
+            <input type="number" placeholder="0xxx-xxxxxxx" class="form-control" id="inputEmail4">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label" style="font-weight: bolder;font-size: large;">Date</label>
+            <input type="date" class="form-control" id="inputPassword4">
+          </div>
+        
+
+      </form>
+    </div>
+    <hr style="background-color:#14223b; height:3px;margin: 1%;"/>
+
+      <div class="container-fluid " id="thistable" style="padding-bottom: 2%;">
+        <table class="table" style="border: 2px solid #ffffff;">
+          <thead>
+            <tr style="color: #14223b;background-color: white;font-weight: 900;font-size: large;">
+              <th scope="col">#</th>
+              <th scope="col">Product</th>
+              <th scope="col">Company</th>
+              <th scope="col">Model</th>
+              <th scope="col">Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background-color: #5293b7;color: #14223b;font-weight: 700;">
+              <th scope="row">1</th>
+              <td>BreakShoe</td>
+              <td>Honda</td>
+              <td>CD70</td>
+              <td>5</td>
+            </tr>
+            <tr style="background-color: #5293b7;color: #14223b;font-weight: 700;">
+                <th scope="row">2</th>
+                <td>BreakShoe</td>
+                <td>Honda</td>
+                <td>CD70</td>
+                <td>5</td>
+            </tr>
+            <tr style="background-color: #5293b7;color: #14223b;font-weight: 700;">
+                <th scope="row">3</th>
+                <td>BreakShoe</td>
+                <td>Honda</td>
+                <td>CD70</td>
+                <td>5</td>
+            </tr>
+            <tr style="background-color: #5293b7;color: #14223b;font-weight: 700;">
+                <th scope="row">4</th>
+                <td>BreakShoe</td>
+                <td>Honda</td>
+                <td>CD70</td>
+                <td>5</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+</div>
+
+
+      <div class="col-12 fa-align-center mt-3 text-center">
+        <button  onclick="deleteDocument()" class="btn btn-primary">Clear All</button>
+
+        <button onclick="printDocument()" class="btn btn-primary ">Generate PDF</button>
+      </div>
+
+
+    
+      <script>
+
+    
+        const   printDocument=()=> {
+              const input = document.getElementById("whole");
+              html2canvas(input)
+                .then((canvas) => {
+                  const imgData = canvas.toDataURL('image/png');
+                  const pdf = new jsPDF();
+                  pdf.addImage(imgData, 'JPEG', 0, 0);
+                  // pdf.output('dataurlnewwindow');
+                  pdf.save("download.pdf");
+                })
+              ;
+              }
+
+
+              function deleteDocument(){
+
+                var x=document.getElementById("thistable")     
+                x.style.display="none"
+            }
+      </script>
+
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
